@@ -9,3 +9,13 @@ variable "project_name" {
 variable "cluster_name" {
   default = "smp-eks-cluster"
 }
+
+variable "domain_name" {
+  description = "Your root domain, example: example.com"
+  default     = "yourdomain.com"
+}
+
+variable "app_domain" {
+  description = "Application domain"
+  default     = "app.yourdomain.com"
+}
