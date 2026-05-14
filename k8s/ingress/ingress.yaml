@@ -10,7 +10,8 @@ metadata:
 
 spec:
   rules:
-    - http:
+    - host: hieuphung-mockprj.vti2509.click
+      http:
         paths:
           - path: /auth
             pathType: Prefix
