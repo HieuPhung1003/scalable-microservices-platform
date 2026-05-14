@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: microservices-app
+data:
+  APP_ENV: "dev"
+
+  DB_HOST: "postgres-service"
+  DB_PORT: "5432"
+  DB_NAME: "microservices"
+
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+
+  KAFKA_BROKER_HOST: "kafka-service"
+  KAFKA_BROKER_PORT: "9092"
