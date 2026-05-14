@@ -25,7 +25,7 @@ WORKDIR /build
 RUN cp /app/main .
 
 # Copy file with env variables 
-RUN cp /app/email-service.env .
+RUN cp /app/email-service.env . || :
 
 # Expose SMTP port
 EXPOSE 587/tcp
