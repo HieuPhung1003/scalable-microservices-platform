@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-storage
+  namespace: microservices-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-storage
+  template:
+    metadata:
+      labels:
+        app: user-storage
+    spec:
+      containers:
+        - name: user-storage
+          image: 919664459382.dkr.ecr.ap-southeast-1.amazonaws.com/do2509-hieuphung-mockprj/micro-user-storage:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secret

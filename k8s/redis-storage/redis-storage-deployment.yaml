@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-storage
+  namespace: microservices-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-storage
+  template:
+    metadata:
+      labels:
+        app: redis-storage
+    spec:
+      containers:
+        - name: redis-storage
+          image: 919664459382.dkr.ecr.ap-southeast-1.amazonaws.com/do2509-hieuphung-mockprj/micro-redis-storage:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secret

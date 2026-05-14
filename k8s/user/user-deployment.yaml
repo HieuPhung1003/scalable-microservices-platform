@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: user
   namespace: microservices-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: user
   template:
     metadata:
       labels:
-        app: backend
+        app: user
     spec:
       containers:
-        - name: backend
-          image: 919664459382.dkr.ecr.ap-southeast-1.amazonaws.com/do2509-hieuphung-mockprj/micro-backend:latest
+        - name: user
+          image: 919664459382.dkr.ecr.ap-southeast-1.amazonaws.com/do2509-hieuphung-mockprj/micro-user:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
