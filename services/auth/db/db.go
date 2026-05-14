@@ -26,8 +26,8 @@ func Connect() error {
 		host = "postgres-service"
 		port = "5432"
 		dbName = "kafka-example"
-		user = "admin"
-		pass = "admin"
+		// user = "admin"
+		// pass = "admin"
 	}
 
 	// DB URI "postgres://username:passw@host:5432/dbName?sslmode=disable"
