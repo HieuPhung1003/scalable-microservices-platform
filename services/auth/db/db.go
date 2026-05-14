@@ -23,7 +23,7 @@ func Connect() error {
 	// if missing env variables, use default
 	if host == "" || port == "" || user == "" || pass == "" || dbName == "" || driver == "" {
 		driver = "postgres"
-		host = "database"
+		host = "postgres-service"
 		port = "5432"
 		dbName = "kafka-example"
 		user = "admin"
