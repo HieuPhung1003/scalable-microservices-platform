@@ -1,4 +1,4 @@
-FROM node:13
+FROM node:18-alpine
 
 # Move to working directory /build
 WORKDIR /usr/src/app
@@ -11,6 +11,8 @@ RUN npm install
 
 # Copy the code into the container
 COPY . .
+
+ENV HOST=0.0.0.0
 
 # Export necessary port
 EXPOSE 3000
